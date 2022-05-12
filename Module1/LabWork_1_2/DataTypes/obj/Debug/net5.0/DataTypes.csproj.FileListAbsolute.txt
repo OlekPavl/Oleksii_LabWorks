@@ -1,0 +1,16 @@
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.exe
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.deps.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.runtimeconfig.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.runtimeconfig.dev.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\ref\DataTypes.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\bin\Debug\net5.0\DataTypes.pdb
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.csprojAssemblyReference.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.GeneratedMSBuildEditorConfig.editorconfig
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.AssemblyInfoInputs.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.AssemblyInfo.cs
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.csproj.CoreCompileInputs.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\ref\DataTypes.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.pdb
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork_1_2\DataTypes\obj\Debug\net5.0\DataTypes.genruntimeconfig.cache

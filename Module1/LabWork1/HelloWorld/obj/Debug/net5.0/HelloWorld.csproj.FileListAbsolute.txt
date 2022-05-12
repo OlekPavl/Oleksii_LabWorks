@@ -1,0 +1,16 @@
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.exe
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.deps.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.runtimeconfig.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.runtimeconfig.dev.json
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\ref\HelloWorld.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\bin\Debug\net5.0\HelloWorld.pdb
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.csprojAssemblyReference.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.AssemblyInfoInputs.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.AssemblyInfo.cs
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.csproj.CoreCompileInputs.cache
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\ref\HelloWorld.dll
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.pdb
+D:\ДИСК С\Мои документы\Алексей\Programming\Main Academy\Projects\MainAcademy\Module 1. Basic principles of C#, CLR\LabWork1\HelloWorld\obj\Debug\net5.0\HelloWorld.genruntimeconfig.cache

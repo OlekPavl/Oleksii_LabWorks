@@ -1,0 +1,16 @@
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.exe
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.deps.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.runtimeconfig.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.runtimeconfig.dev.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ref\ArrayStructureEnum.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\bin\Release\net5.0\ArrayStructureEnum.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.csprojAssemblyReference.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.AssemblyInfoInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.AssemblyInfo.cs
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ref\ArrayStructureEnum.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_4\ArrayStructureEnum\obj\Release\net5.0\ArrayStructureEnum.genruntimeconfig.cache

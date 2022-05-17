@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_3\\ProgramCode_1\\ProgramCode_1.csproj": {}
+    "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_4\\ArrayStructureEnum\\ArrayStructureEnum.csproj": {}
   },
   "projects": {
-    "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_3\\ProgramCode_1\\ProgramCode_1.csproj": {
+    "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_4\\ArrayStructureEnum\\ArrayStructureEnum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_3\\ProgramCode_1\\ProgramCode_1.csproj",
-        "projectName": "ProgramCode_1",
-        "projectPath": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_3\\ProgramCode_1\\ProgramCode_1.csproj",
+        "projectUniqueName": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_4\\ArrayStructureEnum\\ArrayStructureEnum.csproj",
+        "projectName": "ArrayStructureEnum",
+        "projectPath": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_4\\ArrayStructureEnum\\ArrayStructureEnum.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_3\\ProgramCode_1\\obj\\",
+        "outputPath": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\LabWork_1_4\\ArrayStructureEnum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

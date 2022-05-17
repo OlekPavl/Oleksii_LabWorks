@@ -21,18 +21,23 @@ namespace ProgramCode_1
                 userNumber = Convert.ToInt32(Console.ReadLine());
                 if (userNumber < Guess_number)
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("{0} - Too low!", userNumber);
                 }
                 else if (userNumber > Guess_number)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("{0} - Too high!", userNumber);
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("{0} - is right! Congratulations!", userNumber);
                     cycle = false;
                 }
             }
+
+            Console.ReadLine();
         }
     }
 }

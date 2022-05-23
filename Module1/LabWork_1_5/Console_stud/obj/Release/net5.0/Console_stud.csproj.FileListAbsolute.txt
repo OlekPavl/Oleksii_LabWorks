@@ -1,0 +1,16 @@
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.exe
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.deps.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.runtimeconfig.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.runtimeconfig.dev.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\ref\Console_stud.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\bin\Release\net5.0\Console_stud.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.csprojAssemblyReference.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.AssemblyInfoInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.AssemblyInfo.cs
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\ref\Console_stud.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\LabWork_1_5\Console_stud\obj\Release\net5.0\Console_stud.genruntimeconfig.cache

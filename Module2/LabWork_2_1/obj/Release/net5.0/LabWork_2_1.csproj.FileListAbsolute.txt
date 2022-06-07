@@ -1,0 +1,15 @@
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.exe
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.deps.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.runtimeconfig.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.runtimeconfig.dev.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\ref\LabWork_2_1.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\bin\Release\net5.0\LabWork_2_1.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.AssemblyInfoInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.AssemblyInfo.cs
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\ref\LabWork_2_1.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_1\obj\Release\net5.0\LabWork_2_1.genruntimeconfig.cache

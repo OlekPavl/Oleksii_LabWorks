@@ -1,0 +1,5 @@
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_4\obj\Debug\net5.0\LabWork_2_4.csprojAssemblyReference.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_4\obj\Debug\net5.0\LabWork_2_4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_4\obj\Debug\net5.0\LabWork_2_4.AssemblyInfoInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_4\obj\Debug\net5.0\LabWork_2_4.AssemblyInfo.cs
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module2\LabWork_2_4\obj\Debug\net5.0\LabWork_2_4.csproj.CoreCompileInputs.cache

@@ -47,7 +47,7 @@ namespace LabWork_3_2
                     // BirdFlewAway = true and we generate custom exception    BirdFlewAwayException(string.Format("{0} flew with incredible speed!", Nick), "Oh! Startle.", DateTime.Now)
                     // with HelpLink = "http://en.wikipedia.org/wiki/Tufted_titmouse" else  console.writeline about Bird speed 
                     birdFlewAway = true;
-                    BirdFlewAwayException(string.Format("{0} flew with incredible speed!", Nick), "Oh! Startle.", DateTime.Now) with HelpLink = "http://en.wikipedia.org/wiki/Tufted_titmouse";
+                    throw new BirdFlewAwayException(string.Format("{0} flew with incredible speed!", Nick), "Oh! Startle.", DateTime.Now); 
                 }
                 //else  console.writeline about Bird speed 
                 {

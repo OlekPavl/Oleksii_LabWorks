@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "xLClFVPLphc7xnEIX2GL37Ra7uHzjRrNsoyMXFnUqK3YpG5k1dQqMTnu1AXRYZXAYjpTwT/NrkeFloV8baZJZA==",
+  "dgSpecHash": "AVOhM/iw4ysYQn/CCLA+x+sqtr1C4FVA3fKXLU/g4d4YoCjWkcGSUnrTdkC2qfUgisRPiqzMxpdNDOiGsmJP5g==",
   "success": true,
-  "projectFilePath": "D:\\Data\\Documents\\Oleksii\\Programming\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module5\\LabWork_5_2\\LabWork_5_2.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Module5\\LabWork_5_2\\LabWork_5_2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\ecocore\\7.0.0.14161\\ecocore.7.0.0.14161.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EcoCore 7.0.0.14161' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "EcoCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

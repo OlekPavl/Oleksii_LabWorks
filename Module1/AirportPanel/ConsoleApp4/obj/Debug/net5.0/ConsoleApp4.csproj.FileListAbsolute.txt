@@ -1,0 +1,16 @@
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.exe
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.deps.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.runtimeconfig.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.runtimeconfig.dev.json
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ref\ConsoleApp4.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\bin\Debug\net5.0\ConsoleApp4.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.csprojAssemblyReference.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.AssemblyInfoInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.AssemblyInfo.cs
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ref\ConsoleApp4.dll
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.pdb
+D:\Data\Documents\Oleksii\Programming\MainAcademy\Projects\Oleksii_LabWorks\Module1\AirportPanel\ConsoleApp4\obj\Debug\net5.0\ConsoleApp4.genruntimeconfig.cache

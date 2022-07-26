@@ -45,34 +45,36 @@ namespace LabWork_5_1
 
         // WriteData() – save data to file
         // method takes data (info about computers) as parameter
-        public void WriteData(Computer comp, string fileName)
+        public async Task WriteData(Computer comp, string fileName)
         {
             CurrentFile = fileName;
             using (StreamWriter writer = new StreamWriter(CurrentPath + @"\" + CurrentFile + @".txt", true))
             {
-                writer.WriteLine("Cores: " + comp.Cores);
-                writer.WriteLine("Frequency: " + comp.Frequency);
-                writer.WriteLine("Memory: " + comp.Memory);
-                writer.WriteLine("Hdd: " + comp.Hdd);
+                await writer.WriteLineAsync("Cores: " + comp.Cores);
+                await writer.WriteLineAsync("Frequency: " + comp.Frequency);
+                await writer.WriteLineAsync("Memory: " + comp.Memory);
+                await writer.WriteLineAsync("Hdd: " + comp.Hdd);
+                await writer.WriteLineAsync("");
             }
         }
 
         // ReadData() – read data from file
         // method returns info about computers after reading it from file
-        public void ReadData(string fileName)
+        public async Task ReadData(string fileName)
         {
             using (StreamReader reader = new StreamReader(CurrentPath + @"\" + fileName + @".txt"))
             {
                 string? line;
-                while ((line = reader.ReadLine()) != null)
+                while ((line = await reader.ReadLineAsync()) != null)
                 {
                     Console.WriteLine(line);
                 }
             }
+            Console.WriteLine();
         }
         // WriteZip() – save data to zip file
         // method takes data (info about computers) as parameter
-        public void WriteZip(string fileName)
+        public async Task WriteZip(string fileName)
         {
             string compressedFile = CurrentPath + @"\" + fileName + @".gz";
 
@@ -84,14 +86,14 @@ namespace LabWork_5_1
             //поток архивации
             using GZipStream compressionStream = new GZipStream(targetStream, CompressionMode.Compress);
             //копіюємо байти із одного потоку в інший
-            sourceStream.CopyTo(compressionStream);
+            await sourceStream.CopyToAsync(compressionStream);
         }
 
 
         // ReadZip() – read data from file
         // method returns info about computers after reading it from file
 
-        public void ReadZip(string fileName)
+        public async Task ReadZip(string fileName)
         {
             string targetFile = CurrentPath + @"\" + fileName + @"_Decompressed" + @".txt";
             //поток для чтения из сжатого файла
@@ -100,7 +102,7 @@ namespace LabWork_5_1
             using FileStream targetStream = new FileStream(targetFile, FileMode.Create);
             //поток розархивации
             using GZipStream decompressionStream = new GZipStream(sourceStream, CompressionMode.Decompress);
-            decompressionStream.CopyTo(targetStream);
+            await decompressionStream.CopyToAsync(targetStream);
         }
 
 
@@ -146,24 +148,32 @@ namespace LabWork_5_1
                 writer.Write(array3);
                 writer.Write(array4);
 
-                FileStream fileStream = new FileStream()
-            }
+                using FileStream fileStream = new FileStream(CurrentPath + @"\" + CurrentFile + @".txt", FileMode.OpenOrCreate);
 
-            using (FileStream fileStream = new FileStream())
-            {
+                writer.WriteTo(fileStream);
 
+               return fileStream;
             }
 
                 
 
         }
 
-
-
-
         // WriteToFileFromMemoryStream() – save data to file from memory stream and read it
         // method takes file stream as parameter
         // save data to file      
+        
+        //public void WriteToFileFromMemoryStream(FileStream fileStream)
+        //{
+        //    using (MemoryStream memoryStream = new MemoryStream())
+        //    {
+        //        byte[] array = Encoding.UTF8.GetBytes(fileStream.ToString());
+        //        memoryStream.Write(array);
+
+        //        StreamWriter writer = new StreamWriter(CurrentPath + @"\" + CurrentFile + @".txt", true);
+        //        memoryStream.WriteTo(writer);
+        //    }
+        //}
 
 
         // Note: 

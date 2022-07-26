@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <field3>3</field3>
+  <field2>2</field2>
+  <Address>Dortmund</Address>
+  <Code>125</Code>
+</Student>

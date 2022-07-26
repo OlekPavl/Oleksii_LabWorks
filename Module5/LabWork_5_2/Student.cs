@@ -43,10 +43,10 @@ namespace Hello_Serialization_stud
         // Override ToString() method
         public override string ToString()
         {
-            return String.Format(Address + " - " + Code);
+            return String.Concat(Address, " ", Code);
         }
 
-        Regex
+        
         
 
     }

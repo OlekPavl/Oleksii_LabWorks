@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.exe
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.deps.json
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.runtimeconfig.json
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.dll
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\bin\Debug\net5.0\AirlineInfo.pdb
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.dll
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\refint\AirlineInfo.dll
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.pdb
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\AirlineInfo.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Oleksii_LabWorks\Module2\AirlineInfo\AirlineInfo\obj\Debug\net5.0\ref\AirlineInfo.dll

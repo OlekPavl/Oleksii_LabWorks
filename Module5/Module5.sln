@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabWork_5_1", "LabWork_5_1\LabWork_5_1.csproj", "{E7B5FC1F-D894-4CB5-B6E6-526CBCC96E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork_5_2", "LabWork_5_2\LabWork_5_2.csproj", "{A7F43D8D-E298-41E7-BA27-E19F69DC2062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabWork_5_2", "LabWork_5_2\LabWork_5_2.csproj", "{A7F43D8D-E298-41E7-BA27-E19F69DC2062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabWork_5_4_DataSets", "LabWork_5_4_DataSets\LabWork_5_4_DataSets.csproj", "{BC8AE814-F0C9-415D-B324-2B47861039B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7F43D8D-E298-41E7-BA27-E19F69DC2062}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7F43D8D-E298-41E7-BA27-E19F69DC2062}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7F43D8D-E298-41E7-BA27-E19F69DC2062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8AE814-F0C9-415D-B324-2B47861039B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8AE814-F0C9-415D-B324-2B47861039B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8AE814-F0C9-415D-B324-2B47861039B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8AE814-F0C9-415D-B324-2B47861039B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

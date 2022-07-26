@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\AirportPanel.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\AirportPanel.csproj",
       "projectName": "AirportPanel",
-      "projectPath": "G:\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\AirportPanel.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "G:\\MainAcademy\\Projects\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\AirportPanel.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Module1\\AirportPanel\\AirportPanel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

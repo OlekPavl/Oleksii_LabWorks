@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj": {}
+    "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj": {
+    "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj",
+        "projectUniqueName": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj",
         "projectName": "LabWork_5_1",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj",
+        "projectPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\LabWork_5_1.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\obj\\",
+        "outputPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

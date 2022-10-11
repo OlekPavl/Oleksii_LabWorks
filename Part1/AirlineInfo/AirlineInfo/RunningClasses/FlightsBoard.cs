@@ -356,6 +356,104 @@ namespace AirlineInfo
                 Console.WriteLine();
             }
         }
+        public void DisplayTempDepartExpectArrFlightStatus()
+        {
+            string[] header = { "FlighNumb", "TempDepartedAt", "TempExpectedAt", "TempArrivedAt" };
+
+
+            StringBuilder[,] flightsStatusBoard = new StringBuilder[statusOfFlight.Length + 1, 4];
+
+            for (int i = 0; i < 1; i++)
+            {
+                for (int j = 0; j < flightsStatusBoard.GetLength(1); j++)
+                {
+                    flightsStatusBoard[i, j] = new StringBuilder();
+                    flightsStatusBoard[i, j].Append(header[j]);
+                    switch (j)
+                    {
+                        case 0:
+                            for (int k = 0; k < (10 - header[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 1:
+                            for (int k = 0; k < (21 - header[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 2:
+                            for (int k = 0; k < (21 - header[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 3:
+                            for (int k = 0; k < (21 - header[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+
+            for (int i = 1; i < flightsStatusBoard.GetLength(0); i++)
+            {
+                for (int j = 0; j < flightsStatusBoard.GetLength(1); j++)
+                {
+                    flightsStatusBoard[i, j] = new StringBuilder();
+                    if (statusOfFlight[i - 1].arrayTempDepartExpecArr[j] == null)
+                    {
+                        statusOfFlight[i - 1].arrayTempDepartExpecArr[j] = "";
+                    }
+                    flightsStatusBoard[i, j].Append(statusOfFlight[i - 1].arrayTempDepartExpecArr[j]);
+                    switch (j)
+                    {
+                        case 0:
+                            for (int k = 0; k < (10 - statusOfFlight[i - 1].arrayTempDepartExpecArr[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 1:
+                            for (int k = 0; k < (21 - statusOfFlight[i - 1].arrayTempDepartExpecArr[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 2:
+                            for (int k = 0; k < (21 - statusOfFlight[i - 1].arrayTempDepartExpecArr[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        case 3:
+                            for (int k = 0; k < (21 - statusOfFlight[i - 1].arrayTempDepartExpecArr[j].Length); k++)
+                            {
+                                flightsStatusBoard[i, j].Append(" ");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+
+            for (int i = 0; i < flightsStatusBoard.GetLength(0); i++)
+            {
+                for (int j = 0; j < flightsStatusBoard.GetLength(1); j++)
+                {
+                    Console.Write(flightsStatusBoard[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
         public void DisplayPriceList()
         {
             string[] header = { "FlightNumb", "EuroPrice", "Currency", "USDPrice", "Currency" };

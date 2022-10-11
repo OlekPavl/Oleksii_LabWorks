@@ -1,0 +1,15 @@
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\bin\Debug\net6.0\LabWork_3_3.exe
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\bin\Debug\net6.0\LabWork_3_3.deps.json
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\bin\Debug\net6.0\LabWork_3_3.runtimeconfig.json
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\bin\Debug\net6.0\LabWork_3_3.dll
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\bin\Debug\net6.0\LabWork_3_3.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.csproj.AssemblyReference.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.AssemblyInfoInputs.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.AssemblyInfo.cs
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.csproj.CoreCompileInputs.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.dll
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\refint\LabWork_3_3.dll
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\LabWork_3_3.genruntimeconfig.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_3\obj\Debug\net6.0\ref\LabWork_3_3.dll

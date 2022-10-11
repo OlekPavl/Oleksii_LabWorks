@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\LabWork_4_2.csproj",
+      "projectUniqueName": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\LabWork_4_2.csproj",
       "projectName": "LabWork_4_2",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\LabWork_4_2.csproj",
+      "projectPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\LabWork_4_2.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\obj\\",
+      "outputPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\LabWork_4_2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

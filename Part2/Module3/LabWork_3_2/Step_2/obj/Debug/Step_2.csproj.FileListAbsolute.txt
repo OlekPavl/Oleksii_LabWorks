@@ -1,0 +1,13 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_2\bin\Debug\Step_2.exe.config
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_2\bin\Debug\Step_2.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_2\bin\Debug\Step_2.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_2\obj\Debug\Step_2.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_2\obj\Debug\Step_2.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\bin\Debug\Step_2.exe.config
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\bin\Debug\Step_2.exe
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\bin\Debug\Step_2.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\obj\Debug\Step_2.csproj.AssemblyReference.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\obj\Debug\Step_2.csproj.SuggestedBindingRedirects.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\obj\Debug\Step_2.csproj.CoreCompileInputs.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\obj\Debug\Step_2.exe
+D:\Oleksii\Programming\Oleksii_LabWorks\Part2\Module3\LabWork_3_2\Step_2\obj\Debug\Step_2.pdb

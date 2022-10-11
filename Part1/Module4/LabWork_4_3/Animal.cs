@@ -44,7 +44,6 @@ namespace LabWork_4_3
         {
             return new SortWeightAscendingHelper();
         }
-
         public static IComparer SortGenusDescending()
         {
             return new SortGenusDescendingHelper();
@@ -55,7 +54,7 @@ namespace LabWork_4_3
         // every nested class has implemented method Comare with 2 parameters of object and return int
         // class SortWeightAscendingHelper sort weight by ascending
         // class SortGenusDescendingHelper sort genus by descending
-        class SortWeightAscendingHelper : IComparer
+        public class SortWeightAscendingHelper : IComparer
         {
             public int Compare(object x, object y)
             {
@@ -71,13 +70,13 @@ namespace LabWork_4_3
             }
 
         }
-        class SortGenusDescendingHelper : IComparer
+        public class SortGenusDescendingHelper : IComparer
         {
             public int Compare(object x, object y)
             {
                 if (x is Animal a1 && y is Animal a2)
                 {
-                    return a1.Genus.CompareTo(a2.Genus);
+                    return a2.Genus.CompareTo(a1.Genus);
                 }
                 else
                 {

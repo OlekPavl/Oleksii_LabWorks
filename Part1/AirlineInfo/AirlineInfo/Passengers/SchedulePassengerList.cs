@@ -186,19 +186,6 @@ namespace AirlineInfo
 
                 adapter.Fill(dt);
 
-                //foreach (DataColumn column in dt.Columns)
-                //    Console.Write($"{column.ColumnName}\t");
-                //Console.WriteLine();
-                //// перебор всех строк таблицы
-                //foreach (DataRow row in dt.Rows)
-                //{
-                //    // получаем все ячейки строки
-                //    var cells = row.ItemArray;
-                //    foreach (object cell in cells)
-                //        Console.Write($"{cell}\t");
-                //    Console.WriteLine();
-                //}
-
                 CreateEmptyFlighPassengersArray(dt);
 
                 int counter = 0;
@@ -208,13 +195,42 @@ namespace AirlineInfo
                     for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
                     {
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[0] = dt.Rows[counter].ItemArray[0].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FlightNumber = Convert.ToInt32(dt.Rows[counter].ItemArray[0]);
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[1] = dt.Rows[counter].ItemArray[1].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FirstName = dt.Rows[counter].ItemArray[1].ToString();
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[2] = dt.Rows[counter].ItemArray[2].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].SecondName = dt.Rows[counter].ItemArray[2].ToString();
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[3] = dt.Rows[counter].ItemArray[3].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Nationality = dt.Rows[counter].ItemArray[3].ToString();
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[4] = dt.Rows[counter].ItemArray[4].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Passport = Convert.ToInt32(dt.Rows[counter].ItemArray[4]);
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[5] = dt.Rows[counter].ItemArray[5].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].DateOfBirthday = dt.Rows[counter].ItemArray[5].ToString();
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[6] = dt.Rows[counter].ItemArray[6].ToString();
+                        if (dt.Rows[counter].ItemArray[6].ToString() == "Male")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Male;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Female;
+                        }
+
                         dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[7] = dt.Rows[counter].ItemArray[7].ToString();
+                        if (dt.Rows[counter].ItemArray[7].ToString() == "Business")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Business;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Economy;
+                        }
 
                         counter++;
                     }
@@ -225,6 +241,430 @@ namespace AirlineInfo
 
 
             new FlightsBoard(dataBaseSchedulePassengersArray).DisplaySchedulePassengerList();
+        }
+        public void DataBaseSearchByFlightNumberSchedulePassengerArray(int number)
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM PassengerList";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                CreateEmptyFlighPassengersArray(dt);
+
+                int counter = 0;
+
+                for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+                {
+                    for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                    {
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[0] = dt.Rows[counter].ItemArray[0].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FlightNumber = Convert.ToInt32(dt.Rows[counter].ItemArray[0]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[1] = dt.Rows[counter].ItemArray[1].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FirstName = dt.Rows[counter].ItemArray[1].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[2] = dt.Rows[counter].ItemArray[2].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].SecondName = dt.Rows[counter].ItemArray[2].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[3] = dt.Rows[counter].ItemArray[3].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Nationality = dt.Rows[counter].ItemArray[3].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[4] = dt.Rows[counter].ItemArray[4].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Passport = Convert.ToInt32(dt.Rows[counter].ItemArray[4]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[5] = dt.Rows[counter].ItemArray[5].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].DateOfBirthday = dt.Rows[counter].ItemArray[5].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[6] = dt.Rows[counter].ItemArray[6].ToString();
+                        if (dt.Rows[counter].ItemArray[6].ToString() == "Male")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Male;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Female;
+                        }
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[7] = dt.Rows[counter].ItemArray[7].ToString();
+                        if (dt.Rows[counter].ItemArray[7].ToString() == "Business")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Business;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Economy;
+                        }
+
+                        counter++;
+                    }
+
+                }
+
+            }
+
+
+            int count = 0;
+            Passenger[] passArray= new Passenger[0];
+            for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+            {
+                for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                {
+                    count++;
+                    AddElementToArray(ref passArray, count, dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j]);
+                }
+
+            }
+
+            int count2 = 0;
+            Passenger[] tempArray = new Passenger[0];
+            for (int i = 0; i < passArray.Length; i++)
+            {
+                if (passArray[i].FlightNumber == number)
+                {
+                    count2++;
+                    AddElementToArray(ref tempArray, count2, passArray[i]);
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplayFlightPassengerList();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+        }
+        public void DataBaseSearchBySecondNameSchedulePassengerArray(string name)
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM PassengerList";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                CreateEmptyFlighPassengersArray(dt);
+
+                int counter = 0;
+
+                for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+                {
+                    for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                    {
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[0] = dt.Rows[counter].ItemArray[0].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FlightNumber = Convert.ToInt32(dt.Rows[counter].ItemArray[0]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[1] = dt.Rows[counter].ItemArray[1].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FirstName = dt.Rows[counter].ItemArray[1].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[2] = dt.Rows[counter].ItemArray[2].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].SecondName = dt.Rows[counter].ItemArray[2].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[3] = dt.Rows[counter].ItemArray[3].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Nationality = dt.Rows[counter].ItemArray[3].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[4] = dt.Rows[counter].ItemArray[4].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Passport = Convert.ToInt32(dt.Rows[counter].ItemArray[4]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[5] = dt.Rows[counter].ItemArray[5].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].DateOfBirthday = dt.Rows[counter].ItemArray[5].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[6] = dt.Rows[counter].ItemArray[6].ToString();
+                        if (dt.Rows[counter].ItemArray[6].ToString() == "Male")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Male;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Female;
+                        }
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[7] = dt.Rows[counter].ItemArray[7].ToString();
+                        if (dt.Rows[counter].ItemArray[7].ToString() == "Business")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Business;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Economy;
+                        }
+
+                        counter++;
+                    }
+
+                }
+
+            }
+
+
+            int count = 0;
+            Passenger[] passArray = new Passenger[0];
+            for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+            {
+                for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                {
+                    count++;
+                    AddElementToArray(ref passArray, count, dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j]);
+                }
+
+            }
+
+            int count2 = 0;
+            Passenger[] tempArray = new Passenger[0];
+            for (int i = 0; i < passArray.Length; i++)
+            {
+                if (passArray[i].SecondName == name)
+                {
+                    count2++;
+                    AddElementToArray(ref tempArray, count2, passArray[i]);
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplayFlightPassengerList();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+        }
+        public void DataBaseSearchByNationalitySchedulePassengerArray(string name)
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM PassengerList";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                CreateEmptyFlighPassengersArray(dt);
+
+                int counter = 0;
+
+                for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+                {
+                    for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                    {
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[0] = dt.Rows[counter].ItemArray[0].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FlightNumber = Convert.ToInt32(dt.Rows[counter].ItemArray[0]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[1] = dt.Rows[counter].ItemArray[1].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FirstName = dt.Rows[counter].ItemArray[1].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[2] = dt.Rows[counter].ItemArray[2].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].SecondName = dt.Rows[counter].ItemArray[2].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[3] = dt.Rows[counter].ItemArray[3].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Nationality = dt.Rows[counter].ItemArray[3].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[4] = dt.Rows[counter].ItemArray[4].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Passport = Convert.ToInt32(dt.Rows[counter].ItemArray[4]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[5] = dt.Rows[counter].ItemArray[5].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].DateOfBirthday = dt.Rows[counter].ItemArray[5].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[6] = dt.Rows[counter].ItemArray[6].ToString();
+                        if (dt.Rows[counter].ItemArray[6].ToString() == "Male")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Male;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Female;
+                        }
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[7] = dt.Rows[counter].ItemArray[7].ToString();
+                        if (dt.Rows[counter].ItemArray[7].ToString() == "Business")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Business;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Economy;
+                        }
+
+                        counter++;
+                    }
+
+                }
+
+            }
+
+
+            int count = 0;
+            Passenger[] passArray = new Passenger[0];
+            for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+            {
+                for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                {
+                    count++;
+                    AddElementToArray(ref passArray, count, dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j]);
+                }
+
+            }
+
+            int count2 = 0;
+            Passenger[] tempArray = new Passenger[0];
+            for (int i = 0; i < passArray.Length; i++)
+            {
+                if (passArray[i].Nationality == name)
+                {
+                    count2++;
+                    AddElementToArray(ref tempArray, count2, passArray[i]);
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplayFlightPassengerList();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+        }
+        public void DataBaseSearchByPassportNumberSchedulePassengerArray(int number)
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM PassengerList";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                CreateEmptyFlighPassengersArray(dt);
+
+                int counter = 0;
+
+                for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+                {
+                    for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                    {
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[0] = dt.Rows[counter].ItemArray[0].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FlightNumber = Convert.ToInt32(dt.Rows[counter].ItemArray[0]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[1] = dt.Rows[counter].ItemArray[1].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].FirstName = dt.Rows[counter].ItemArray[1].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[2] = dt.Rows[counter].ItemArray[2].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].SecondName = dt.Rows[counter].ItemArray[2].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[3] = dt.Rows[counter].ItemArray[3].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Nationality = dt.Rows[counter].ItemArray[3].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[4] = dt.Rows[counter].ItemArray[4].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Passport = Convert.ToInt32(dt.Rows[counter].ItemArray[4]);
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[5] = dt.Rows[counter].ItemArray[5].ToString();
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].DateOfBirthday = dt.Rows[counter].ItemArray[5].ToString();
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[6] = dt.Rows[counter].ItemArray[6].ToString();
+                        if (dt.Rows[counter].ItemArray[6].ToString() == "Male")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Male;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Sex = SexType.Female;
+                        }
+
+                        dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].arrayPassenger[7] = dt.Rows[counter].ItemArray[7].ToString();
+                        if (dt.Rows[counter].ItemArray[7].ToString() == "Business")
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Business;
+                        }
+                        else
+                        {
+                            dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j].Class = FlightClass.Economy;
+                        }
+
+                        counter++;
+                    }
+
+                }
+
+            }
+
+
+            int count = 0;
+            Passenger[] passArray = new Passenger[0];
+            for (int i = 0; i < dataBaseSchedulePassengersArray.Length; i++)
+            {
+                for (int j = 0; j < dataBaseSchedulePassengersArray[i].flightPassengersArrayList.Length; j++)
+                {
+                    count++;
+                    AddElementToArray(ref passArray, count, dataBaseSchedulePassengersArray[i].flightPassengersArrayList[j]);
+                }
+
+            }
+
+            int count2 = 0;
+            Passenger[] tempArray = new Passenger[0];
+            for (int i = 0; i < passArray.Length; i++)
+            {
+                if (passArray[i].Passport == number)
+                {
+                    count2++;
+                    AddElementToArray(ref tempArray, count2, passArray[i]);
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplayFlightPassengerList();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+        }
+        public void AddElementToArray(ref Passenger[] array, int count, Passenger passenger)
+        {
+
+            Passenger[] tempArray = new Passenger[count];
+            for (int i = 0; i < array.Length; i++)
+            {
+                tempArray[i] = array[i];
+            }
+            array = tempArray;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == null)
+                {
+                    array[i] = passenger;
+                    break;
+                }
+            }
+
         }
         #endregion
     }

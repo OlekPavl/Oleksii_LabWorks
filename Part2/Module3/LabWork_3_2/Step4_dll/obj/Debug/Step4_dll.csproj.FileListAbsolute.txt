@@ -1,0 +1,6 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\bin\Debug\Step4_dll.dll
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\bin\Debug\Step4_dll.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\obj\Debug\Step4_dll.dll
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\obj\Debug\Step4_dll.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\bin\Debug\St4_dll.cs
+C:\Users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step4_dll\obj\Debug\Step4_dll.csprojResolveAssemblyReference.cache

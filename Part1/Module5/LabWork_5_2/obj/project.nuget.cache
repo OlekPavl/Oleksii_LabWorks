@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b6ZTHf3gnFPSwzw1iTnbzPkmOaIp6d/2N4BjjwQI17WSqNDhKqeqBLBNrSLVOSECd5v6NYIOcCfkOO+dpvSzZA==",
+  "dgSpecHash": "YZ+JKT7NeO79hgsSuAD1+VvjBBgzA20vZ4oJi6caEzNaSahXQgUNIDlGiomroDNCiMVqFisR957S/HKBzJYb8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_2\\LabWork_5_2.csproj",
+  "projectFilePath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module5\\LabWork_5_2\\LabWork_5_2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\ecocore\\7.0.0.14161\\ecocore.7.0.0.14161.nupkg.sha512"
   ],

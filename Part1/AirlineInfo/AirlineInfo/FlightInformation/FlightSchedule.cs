@@ -378,20 +378,796 @@ namespace AirlineInfo
                 for (int i = 0; i < dataBaseFlightsArray.Length; i++)
                 {
                     dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
                     dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
                     dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
                     dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
                     dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
                     dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
                     dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
                     dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
                     dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
                 }
 
             }
 
 
             new FlightsBoard(dataBaseFlightsArray).DisplaySchedule();
+        }
+        public void DataBaseSearchByFlightNumber(int number)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].FlightNumber == number)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (dataBaseFlightsArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByDepartureCity(string name)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].CityOfDeparture == name)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByDeparturePort(string name)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].PortOfDeparture == name)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByTimeOfDeparture(DateTime time)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].DepartureDateTime.Year == time.Year && dataBaseFlightsArray[i].DepartureDateTime.Month == time.Month && dataBaseFlightsArray[i].DepartureDateTime.Hour == time.Hour && dataBaseFlightsArray[i].DepartureDateTime.Minute == time.Minute)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                //Console.WriteLine(dataBaseFlightsArray[0].DepartureDateTime);
+                //Console.WriteLine(time);
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByArrivalCity(string name)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].CityOfArrival == name)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByArrivalPort(string name)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].PortOfArrival == name)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchByTimeOfArrival(DateTime time)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].ArrivalDateTime.Year == time.Year && dataBaseFlightsArray[i].ArrivalDateTime.Month == time.Month && dataBaseFlightsArray[i].ArrivalDateTime.Hour == time.Hour && dataBaseFlightsArray[i].ArrivalDateTime.Minute == time.Minute)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                //Console.WriteLine(dataBaseFlightsArray[0].DepartureDateTime);
+                //Console.WriteLine(time);
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchTheNearestOneHourFlightFromPort(DateTime time, string departurePort)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].DepartureDateTime == time)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                }
+
+                if (dataBaseFlightsArray[i].PortOfDeparture == departurePort)
+                {
+                    if (dataBaseFlightsArray[i].DepartureDateTime.Date == time.Date)
+                    {
+                        int value = Math.Abs((dataBaseFlightsArray[i].DepartureDateTime.Hour * 60 + dataBaseFlightsArray[i].DepartureDateTime.Minute) - (time.Hour * 60 + time.Minute));
+                        //Console.WriteLine(value);
+
+                        if (value <= 60)
+                        {
+                            counter++;
+                            AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                        }
+                    }
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
+        }
+        public void DataBaseSearchTheNearestOneHourFlightToPort(DateTime time, string arrivalPort)
+        {
+            DataSetClass ds = new DataSetClass();
+
+
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightSсhedule";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+
+
+                dataBaseFlightsArray = new FlightInformation[dt.Rows.Count];
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i] = new FlightInformation("empty");
+                }
+
+                for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+                {
+                    dataBaseFlightsArray[i].arrayFlightInformation[0] = dt.Rows[i].ItemArray[0].ToString();
+                    dataBaseFlightsArray[i].FlightNumber = Convert.ToInt32(dt.Rows[i].ItemArray[0]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[1] = dt.Rows[i].ItemArray[1].ToString();
+                    dataBaseFlightsArray[i].Airline = dt.Rows[i].ItemArray[1].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[2] = dt.Rows[i].ItemArray[2].ToString();
+                    dataBaseFlightsArray[i].DepartureDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[2]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[3] = dt.Rows[i].ItemArray[3].ToString();
+                    dataBaseFlightsArray[i].ArrivalDateTime = Convert.ToDateTime(dt.Rows[i].ItemArray[3]);
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[4] = dt.Rows[i].ItemArray[4].ToString();
+                    dataBaseFlightsArray[i].CityOfDeparture = dt.Rows[i].ItemArray[4].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[5] = dt.Rows[i].ItemArray[5].ToString();
+                    dataBaseFlightsArray[i].PortOfDeparture = dt.Rows[i].ItemArray[5].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[6] = dt.Rows[i].ItemArray[6].ToString();
+                    dataBaseFlightsArray[i].CityOfArrival = dt.Rows[i].ItemArray[6].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[7] = dt.Rows[i].ItemArray[7].ToString();
+                    dataBaseFlightsArray[i].PortOfArrival = dt.Rows[i].ItemArray[7].ToString();
+
+                    dataBaseFlightsArray[i].arrayFlightInformation[8] = dt.Rows[i].ItemArray[8].ToString();
+                    dataBaseFlightsArray[i].Terminal = dt.Rows[i].ItemArray[8].ToString();
+                }
+
+            }
+
+
+            int counter = 0;
+            FlightInformation[] tempArray = new FlightInformation[0];
+
+            for (int i = 0; i < dataBaseFlightsArray.Length; i++)
+            {
+                if (dataBaseFlightsArray[i].ArrivalDateTime == time)
+                {
+                    counter++;
+                    AddElementToArray(ref tempArray, counter, flightsArray[i]);
+                }
+
+                if (dataBaseFlightsArray[i].PortOfArrival == arrivalPort)
+                {
+                    if (dataBaseFlightsArray[i].ArrivalDateTime.Date == time.Date)
+                    {
+                        int value = Math.Abs((dataBaseFlightsArray[i].ArrivalDateTime.Hour * 60 + dataBaseFlightsArray[i].ArrivalDateTime.Minute) - (time.Hour * 60 + time.Minute));
+                        //Console.WriteLine(value);
+
+                        if (value <= 60)
+                        {
+                            counter++;
+                            AddElementToArray(ref tempArray, counter, dataBaseFlightsArray[i]);
+                        }
+                    }
+                }
+
+            }
+            if (tempArray.Length > 0)
+            {
+                new FlightsBoard(tempArray).DisplaySchedule();
+            }
+            else
+            {
+                Console.WriteLine("The inforamtion not found");
+            }
+
         }
         #endregion
     }

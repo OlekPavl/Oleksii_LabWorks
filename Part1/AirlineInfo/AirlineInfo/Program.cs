@@ -12,13 +12,10 @@ namespace AirlineInfo
     {
         static void Main(string[] args)
         {
-            CreateFlight flight = new CreateFlight();
+            Flight flight = new Flight();
             Menu menu = new Menu(flight);
-            //RunProgram program = new RunProgram(menu);
 
-            //SQLServerDataBaseClass db = new SQLServerDataBaseClass(dataSetClass);
-            //db.CreateTableFlightScheduleInDatabase();
-            //db.UpdateTableFlightScheduleInDatabase();
+
 
 
 

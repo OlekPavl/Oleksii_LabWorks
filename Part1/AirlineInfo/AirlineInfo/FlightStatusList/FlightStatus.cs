@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace AirlineInfo
 {
@@ -29,12 +31,15 @@ namespace AirlineInfo
         NotCancelled
     }
     
-    public delegate void FlightStatusHandler(ref int numb);
+    public delegate void FlightStatusHandler(int numb);
 
 
     class FlightStatus
     {
         public string[] arrayFlightStatus = new string[9];
+        public string[] arrayTempDepartExpecArr = new string[4];
+        public FlightStatus[] dataBaseTempDepartExpecArr;
+
         public int? FlightNumber { get; set; }
         FlightInformation flight;
 
@@ -47,6 +52,7 @@ namespace AirlineInfo
             this.flight = flight;
             FlightNumber = flight.FlightNumber;
             arrayFlightStatus[0] = FlightNumber.ToString();
+            arrayTempDepartExpecArr[0] = FlightNumber.ToString();
             FlightStatusAutomaticalInitializer();
         }
         public FlightStatus(string message)
@@ -102,9 +108,9 @@ namespace AirlineInfo
             }
         }
 
-        DateTime? tempDeprAt;
-        DateTime? tempExpectedAt;
-        DateTime? tempArrAt;
+        public DateTime? tempDeprAt;
+        public DateTime? tempExpectedAt;
+        public DateTime? tempArrAt;
 
         public void FlightStatusInitializer()
         {
@@ -297,7 +303,7 @@ namespace AirlineInfo
             Random random = new Random();
             Gate = random.Next(1, 20);
             arrayFlightStatus[1] = Gate.ToString();
-
+            
             TimeSpan timeSpan = TimeSpan.FromHours(5);
 
 
@@ -352,9 +358,11 @@ namespace AirlineInfo
                 Random random = new Random();
 
                 tempDeprAt = flight.DepartureDateTime + TimeSpan.FromSeconds(random.Next(0, 60));
+                arrayTempDepartExpecArr[1] = tempDeprAt.ToString();
                 tempExpAt = tempDeprAt + TimeSpan.FromMinutes(random.Next(35, 55));
+                arrayTempDepartExpecArr[2] = tempExpAt.ToString();
                 tempArrAt = tempExpAt + TimeSpan.FromMinutes(random.Next(0, 5));
-
+                arrayTempDepartExpecArr[3] = tempArrAt.ToString();
             }
 
         }
@@ -392,7 +400,7 @@ namespace AirlineInfo
                     InFlight = InFlightStatus.InFlight;
                     arrayFlightStatus[5] = InFlight.ToString();
                     int number = Convert.ToInt32(arrayFlightStatus[0]);
-                    Notify?.Invoke(ref number);
+                    Notify?.Invoke(number);
                 }                                
             }
             if (expectedAt != null && arrivedAt == null)
@@ -405,7 +413,35 @@ namespace AirlineInfo
             }
 
         }
+        public void DataBaseCheckUpdateStatus(FlightStatus tempDepartExpect)
+        {
+            if (departedAt == null)
+            {
+                if (tempDepartExpect.tempDeprAt <= DateTime.Now)
+                {
+                    DepartedAt = tempDepartExpect.tempDeprAt;
+                    arrayFlightStatus[6] = DepartedAt.ToString();
+                    ExpectedAt = tempDepartExpect.tempExpectedAt;
+                    arrayFlightStatus[7] = ExpectedAt.ToString();
+                    CheckIn = CheckInStatus.Finished;
+                    arrayFlightStatus[2] = CheckIn.ToString();
+                    GateClosed = GateClosedStatus.Closed;
+                    arrayFlightStatus[3] = GateClosed.ToString();
+                    InFlight = InFlightStatus.InFlight;
+                    arrayFlightStatus[5] = InFlight.ToString();
+                    int number = Convert.ToInt32(arrayFlightStatus[0]);
+                    Notify?.Invoke(number);
+                }
+            }
+            if (expectedAt != null && arrivedAt == null)
+            {
+                if (tempArrAt <= DateTime.Now)
+                {
+                    ArrivedAt = tempArrAt;
+                    arrayFlightStatus[8] = ArrivedAt.ToString();
+                }
+            }
 
-
+        }
     }
 }

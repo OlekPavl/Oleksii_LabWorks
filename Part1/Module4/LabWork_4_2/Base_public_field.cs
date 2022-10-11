@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LabWork_4_2
+namespace Hello_Generics_stud
 {
     public class Base_public_field<T> where T : new()
     {
@@ -20,8 +20,9 @@ namespace LabWork_4_2
         }
         static Base_public_field()
         {
-            System.Console.WriteLine(" Base static constructor");
+            System.Console.WriteLine("  Base static constructor");
             T intern = new T();
         }
+
     }
 }

@@ -12,6 +12,7 @@ namespace AirlineInfo
         public DataSet flightDataSet;
         public DataTable flightSchedule;
         public DataTable flightStatusList;
+        public DataTable tempDepartExpectArrDates;
         public DataTable priceList;
         public DataTable passengersList;
         public DataSetClass()
@@ -21,10 +22,12 @@ namespace AirlineInfo
             flightStatusList = new DataTable("FlightStatusList");
             priceList = new DataTable("FlightPriceList");
             passengersList = new DataTable("PassengersList");
+            tempDepartExpectArrDates = new DataTable("TempDepartExpectArrDates");
             flightDataSet.Tables.Add(flightSchedule);
             flightDataSet.Tables.Add(flightStatusList);
             flightDataSet.Tables.Add(priceList);
             flightDataSet.Tables.Add(passengersList);
+            flightDataSet.Tables.Add(tempDepartExpectArrDates);
         }
 
         #region FlightSchedule
@@ -133,6 +136,79 @@ namespace AirlineInfo
             }
 
         }
+        public void FillFlightStatusListTable2(FlightStatusList fsl)
+        {
+            DataColumn flightNumber = new DataColumn("FlighNumb", Type.GetType("System.Int32"));
+            DataColumn gate = new DataColumn("Gate", Type.GetType("System.Int32"));
+            DataColumn checkIn = new DataColumn("CheckIn", Type.GetType("System.String"));
+            DataColumn gateClosed = new DataColumn("GateClosed", Type.GetType("System.String"));
+            DataColumn cancelled = new DataColumn("Cancelled", Type.GetType("System.String"));
+            DataColumn inFlight = new DataColumn("InFlight", Type.GetType("System.String"));
+            DataColumn departedAt = new DataColumn("DepartedAt", Type.GetType("System.DateTime"));
+            DataColumn expectedAt = new DataColumn("ExpectedAt", Type.GetType("System.DateTime"));
+            DataColumn arrivedAt = new DataColumn("ArrivedAt", Type.GetType("System.DateTime"));
+
+            flightStatusList.Columns.Add(flightNumber);
+            flightStatusList.Columns.Add(gate);
+            flightStatusList.Columns.Add(checkIn);
+            flightStatusList.Columns.Add(gateClosed);
+            flightStatusList.Columns.Add(cancelled);
+            flightStatusList.Columns.Add(inFlight);
+            flightStatusList.Columns.Add(departedAt);
+            flightStatusList.Columns.Add(expectedAt);
+            flightStatusList.Columns.Add(arrivedAt);
+
+            flightStatusList.PrimaryKey = new DataColumn[] { flightStatusList.Columns["FlightNumb"] };
+
+            for (int i = 0; i < fsl.dataBaseFlightStatus.Length; i++)
+            {
+                DataRow row = flightStatusList.NewRow();
+                row.ItemArray = new object[]
+                {
+                    fsl.dataBaseFlightStatus[i].FlightNumber,
+                    fsl.dataBaseFlightStatus[i].Gate,
+                    fsl.dataBaseFlightStatus[i].CheckIn,
+                    fsl.dataBaseFlightStatus[i].GateClosed,
+                    fsl.dataBaseFlightStatus[i].Cancelled,
+                    fsl.dataBaseFlightStatus[i].InFlight,
+                    fsl.dataBaseFlightStatus[i].DepartedAt,
+                    fsl.dataBaseFlightStatus[i].ExpectedAt,
+                    fsl.dataBaseFlightStatus[i].ArrivedAt
+                };
+                flightStatusList.Rows.Add(row);
+            }
+
+        }
+        public void FillTempDepartExpectArrTable(FlightStatusList fsl)
+        {
+            DataColumn flightNumber = new DataColumn("FlighNumb", Type.GetType("System.Int32"));
+            DataColumn tempDeprAt = new DataColumn("TempDepartedAt", Type.GetType("System.DateTime"));
+            DataColumn tempExpectedAt = new DataColumn("TempExpectedAt", Type.GetType("System.DateTime"));
+            DataColumn tempArrAt = new DataColumn("TempArrivedAt", Type.GetType("System.DateTime"));
+
+
+            tempDepartExpectArrDates.Columns.Add(flightNumber);
+            tempDepartExpectArrDates.Columns.Add(tempDeprAt);
+            tempDepartExpectArrDates.Columns.Add(tempExpectedAt);
+            tempDepartExpectArrDates.Columns.Add(tempArrAt);
+
+
+            tempDepartExpectArrDates.PrimaryKey = new DataColumn[] { tempDepartExpectArrDates.Columns["FlightNumb"] };
+
+            for (int i = 0; i < fsl.flightsStatusArray.Length; i++)
+            {
+                DataRow row = tempDepartExpectArrDates.NewRow();
+                row.ItemArray = new object[]
+                {
+                    fsl.flightsStatusArray[i].FlightNumber,
+                    fsl.flightsStatusArray[i].tempDeprAt,
+                    fsl.flightsStatusArray[i].tempExpectedAt,
+                    fsl.flightsStatusArray[i].tempArrAt,
+                };
+                tempDepartExpectArrDates.Rows.Add(row);
+            }
+
+        }
         public void DisplayFlightStatusListTable()
         {
             string[] header = { "FlighNumb", "Gate", "CheckIn", "GateClosed", "Cancelled", "InFlight", "DepartedAt", "ExpectedAt", "ArrivedAt" };
@@ -141,6 +217,20 @@ namespace AirlineInfo
             Console.WriteLine();
 
             foreach (DataRow r in flightStatusList.Rows)
+            {
+                foreach (var cell in r.ItemArray)
+                    Console.Write("{0}\t", cell);
+                Console.WriteLine();
+            }
+        }
+        public void DisplayTempDepartExpectArrTable()
+        {
+            string[] header = { "FlighNumb", "TempDepartedAt", "TempExpectedAt", "TempArrivedAt" };
+
+            Console.Write("FlighNumb\t TempDepartedAt\t TempExpectedAt\t TempArrivedAt\t");
+            Console.WriteLine();
+
+            foreach (DataRow r in tempDepartExpectArrDates.Rows)
             {
                 foreach (var cell in r.ItemArray)
                     Console.Write("{0}\t", cell);

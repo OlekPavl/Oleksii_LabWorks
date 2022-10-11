@@ -21,3 +21,11 @@ C:\Users\Admin\Desktop\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\D
 C:\Users\Admin\Desktop\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.exe
 C:\Users\Admin\Desktop\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\bin\Debug\LabWork_5_4_DataSets.exe.config
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\bin\Debug\LabWork_5_4_DataSets.exe
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\bin\Debug\LabWork_5_4_DataSets.pdb
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.csproj.AssemblyReference.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.csproj.SuggestedBindingRedirects.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.csproj.CoreCompileInputs.cache
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.exe
+D:\Oleksii\Programming\Oleksii_LabWorks\Part1\Module5\LabWork_5_4_DataSets\obj\Debug\LabWork_5_4_DataSets.pdb

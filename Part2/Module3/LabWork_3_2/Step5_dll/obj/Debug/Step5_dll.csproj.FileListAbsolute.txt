@@ -1,0 +1,4 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step5_dll\bin\Debug\Step5_dll.dll
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step5_dll\bin\Debug\Step5_dll.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step5_dll\obj\Debug\Step5_dll.dll
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step5_dll\obj\Debug\Step5_dll.pdb

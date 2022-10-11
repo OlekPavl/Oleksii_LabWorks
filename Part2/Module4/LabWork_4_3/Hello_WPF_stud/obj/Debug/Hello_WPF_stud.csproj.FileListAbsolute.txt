@@ -1,0 +1,36 @@
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe.config
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.pdb
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.csprojResolveAssemblyReference.cache
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\MainWindow.baml
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\MainWindow.g.cs
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\App.g.cs
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud_MarkupCompile.cache
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.g.resources
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.Properties.Resources.resources
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.csproj.GenerateResource.Cache
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.exe
+D:\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.pdb
+C:\Users\win7\Documents\Visual Studio 2013\Projects\Hello_WPF_stud\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe.config
+C:\Users\win7\Documents\Visual Studio 2013\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.exe
+C:\Users\win7\Documents\Visual Studio 2013\Projects\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.pdb
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe.config
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.exe
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.pdb
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe.config
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.exe
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.pdb
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.pdb
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\bin\Debug\NCalc.dll
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.csprojResolveAssemblyReference.cache
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\MainWindow.baml
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\MainWindow.g.cs
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\App.g.cs
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud_MarkupCompile.cache
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.g.resources
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.Properties.Resources.resources
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_upgr\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.csproj.GenerateResource.Cache
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_v1\Hello_WPF_stud\bin\Debug\Hello_WPF_stud.exe.config
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_v1\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.exe
+C:\Users\win7\Desktop\Group_290915\121115\Hello_WPF_stud_v1\Hello_WPF_stud\obj\Debug\Hello_WPF_stud.pdb

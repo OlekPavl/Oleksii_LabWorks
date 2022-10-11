@@ -1,0 +1,19 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\bin\Debug\Step_5.exe.config
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\bin\Debug\Step_5.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\bin\Debug\Step_5.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\bin\Debug\Step5_dll.dll
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\bin\Debug\Step5_dll.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\obj\Debug\Step_5.csprojResolveAssemblyReference.cache
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\obj\Debug\Step_5.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_5\obj\Debug\Step_5.pdb
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\bin\Debug\Step_5.exe.config
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\bin\Debug\Step_5.exe
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\bin\Debug\Step_5.pdb
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\bin\Debug\Step5_dll.dll
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\bin\Debug\Step5_dll.pdb
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.csproj.CopyComplete
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.exe
+C:\Users\Admin\Desktop\(begin)Hello_Security_stud\Hello_Security_stud\Step_5\obj\Debug\Step_5.pdb

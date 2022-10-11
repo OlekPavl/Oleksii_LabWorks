@@ -211,7 +211,7 @@ namespace LabWork_5_4_DataSets
 
         // implement bool MyTable_insert_bldr(string usr_table, string key,  string[] clmn, string[] clmn_value) method
         // with parameters fot DataTable , string key name, string clmn, string clmn_value to insert row
-        public bool MyTable_insert_bldr(DataTable usr_table, string key, string[] clmn, string[] clmn_value)
+        public bool MyTable_insert_bldr(string usr_table, string key, string[] clmn, string[] clmn_value)
         {
             bool result = false;
 
@@ -222,41 +222,43 @@ namespace LabWork_5_4_DataSets
                 using (SqlConnection connection = new SqlConnection(MyConnection))
                 {
                     connection.Open();
-                    string sql = "SELECT * FROM " + usr_table.TableName;
+                    string sql = "SELECT * FROM " + usr_table;
                     // create SqlDataAdapter object associated with SqlCommand object
                     //SqlDataAdapter adapter = CreateCustomerAdapter(usr_table, connection);
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                     // populate usr_table by data from database
-                    adapter.Fill(usr_table);
-                    //foreach (DataRow row in usr_table.Rows)
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    //foreach (DataRow row in dt.Rows)
                     //{
                     //    Console.WriteLine(row[0].ToString());
 
                     //}
 
+                    //return true;
+
                     // define usr_table primary key by new DataColumn[], initiate it by key value
-                    usr_table.PrimaryKey = new DataColumn[] { usr_table.Columns[key] };
+                    dt.PrimaryKey = new DataColumn[] { dt.Columns[key] };
+
 
                     //define DataRow object as the usr_table row with key value which equals key_value
                     // добавим новую строку
-                    DataRow newRow = usr_table.NewRow();
-                    newRow[clmn[0]] = Next_key_gen(usr_table, key);
-                    newRow[clmn[1]] = $"{clmn_value[1]}";
-                    newRow[clmn[2]] = $"{clmn_value[2]}";
-                    newRow[clmn[3]] = $"{clmn_value[3]}";
-                    newRow[clmn[4]] = Convert.ToInt32(clmn_value[4]);
-                    newRow[clmn[5]] = Convert.ToDecimal(clmn_value[5]);
-                    newRow[clmn[6]] = Convert.ToInt32(clmn_value[6]);
-                    newRow[clmn[7]] = Convert.ToDateTime(clmn_value[7]);
-                    newRow[clmn[8]] = Convert.ToInt16(clmn_value[8]);
+                    DataRow newRow = dt.NewRow();
+                    newRow[0] = Next_key_gen(dt, key);
+                    newRow[dt.Columns.IndexOf(clmn[0])] = $"{clmn_value[0]}";
+                    newRow[dt.Columns.IndexOf(clmn[1])] = $"{clmn_value[1]}";
+                    newRow[dt.Columns.IndexOf(clmn[2])] = $"{clmn_value[2]}";
 
-                    usr_table.Rows.Add(newRow);
 
-                    foreach (DataRow row in usr_table.Rows)
-                    {
-                        Console.WriteLine(row[0].ToString());
+                    dt.Rows.Add(newRow);
 
-                    }
+                    //foreach (DataRow row in dt.Rows)
+                    //{
+                    //    Console.WriteLine(row[0].ToString());
+
+                    //}
+                    //return true;
+
 
                     //return true;
 
@@ -265,7 +267,7 @@ namespace LabWork_5_4_DataSets
                     {
 
                         SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
-                        adapter.Update(usr_table);
+                        adapter.Update(dt);
 
                         //adapter.Update(usr_table);
 
@@ -314,7 +316,6 @@ namespace LabWork_5_4_DataSets
             return nextKey;
 
         }
-
 
         // implement bool MyTable_update_bldr(string usr_table, string key, string key_value, string clmn, string clmn_value) method
         // with parameters fot table name , string key name,  string key_value,string clmn, string clmn_value to update the table
@@ -391,102 +392,188 @@ namespace LabWork_5_4_DataSets
 
             return result;
         }
- 
-
 
         // implement bool MyTable_update_ds(string usr_table, string key, string key_value, string clmn, string clmn_value) method
         // with parameters fot table name , string key name,  string key_value, string clmn, string clmn_value to update the table
+        public bool MyTable_update_ds(string usr_table, string key, string key_value, string clmn, string clmn_value)
+        {
+            // define bool result and initiate it with false
+            // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            bool result = false;
 
-        // define bool result and initiate it with false
-        // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            // create SqlCommand object for SglConnection object
+            // define its CommandText like sql query to select all from "usr_table" from database
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(MyConnection))
+                {
+                    connection.Open();
+                    string sql = "SELECT * FROM " + usr_table;
+                    SqlCommand command = new SqlCommand(sql, connection);
 
-        // create SqlCommand object for SglConnection object
-        // define its CommandText like sql query to select all from "usr_table" from database
+                    // create SqlDataAdapter object associated with SqlCommand object
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-        // create SqlDataAdapter object associated with SqlCommand object
+                    // create new DataSet
+                    // fill it using usr_table
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
 
-        // create new DataSet
-        // fill it using usr_table
+                    // define DataTable object  from DataSet with usr_table name
+                    DataTable dt = ds.Tables[0];
+                    dt.TableName = "usr_table";
 
-        // define DataTable object  from DataSet with usr_table name
+                    // define its primary key by new DataColumn[], initiate it by key value
+                    // accept changes for DataTable object
+                    dt.PrimaryKey = new DataColumn[] { dt.Columns[key] };
+                    dt.AcceptChanges();
 
-        // define its primary key by new DataColumn[], initiate it by key value
-        // accept changes for DataTable object
+                    // create DataRow object and assign  DataTable object Rows.Find(key_value) result to it
+                    DataRow rowObjectLine = dt.Rows.Find(key_value);
+                    int rowIndex = dt.Rows.IndexOf(rowObjectLine);
+                    int cellIndex = dt.Columns.IndexOf(clmn);
 
-        // create DataRow object and assign  DataTable object Rows.Find(key_value) result to it
+                    // create string for sql query to update clmn column for clmn_value where key = key_value
+                    // in try-catch block open connection, create adapter UpdateCommand  using connection CreateCommand method
+                    // Open connection
+                    // define UpdateCommand for adapter 
+                    // define its CommandText for string to update row
+                    // call adapter update method to update usr_table
+                    try
+                    {
+                        DataRow dr = dt.Rows[rowIndex];
+                        // assign to its clmn column clmn_value
+                        dr[cellIndex] = clmn_value;
 
-        // assign to its clmn column clmn_value
+                        SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
 
-        // create string for sql query to update clmn column for clmn_value where key = key_value
-
-        // in try-catch block open connection, create adapter UpdateCommand  using connection CreateCommand method
-
-        // Open connection
-        // define UpdateCommand for adapter 
-        // define its CommandText for string to update row
-        // call adapter update method to update usr_table
-
-
-        // exception message output
-
-        // assign true for result
-
-        // return result
-
-        // exception message output
-        // return false
-
+                        // call adapter Update method to update usr_table
+                        adapter.Update(dt);
 
 
+
+                        result = true;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        result = false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = false;
+            }
+                  
+
+
+            return result;
+        }
 
         //implement bool MyTable_read(DataTable usr_table) method to read from usr_table
+        public bool MyTable_read(DataTable usr_table)
+        {
+            // define bool result and initiate it with false
+            bool result = false;
+            // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(MyConnection))
+                {
+                    connection.Open();
 
-        // define bool result and initiate it with false
-        // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+                    // create SqlCommand object for SglConnection object
+                    // define its CommandText like sql query to select all from "usr_table" from database
+                    string sql = "SELECT * FROM " + usr_table;
+                    SqlCommand command = new SqlCommand(sql, connection);
 
-        // create SqlCommand object for SglConnection object
-        // define its CommandText like sql query to select all from "usr_table" from database
+                    // create SqlDataAdapter object associated with SqlCommand object
+                    // fill  usr_table
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(usr_table);
 
-        // create SqlDataAdapter object associated with SqlCommand object
-        // fill  usr_table
+                    foreach (DataColumn column in usr_table.Columns)
+                    {
+                        Console.Write($"{column.ColumnName}\t");
+                    }
+                    Console.WriteLine();
 
-        // define DataTable object  from DataSet with usr_table name
+                    foreach (DataRow row in usr_table.Rows)
+                    {
+                        var cells = row.ItemArray;
+                        foreach (object cell in cells)
+                        {
+                            Console.Write($"{cell}\t");
+                        }
+                        Console.WriteLine();
+                    }
 
-        // assign true for result
+                    // define DataTable object  from DataSet with usr_table name
 
-        // return result
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = false;
+            }
 
-        // exception message output
-        // return false
-
-
-
+            return result;
+        }
 
         // implement MyConnect() method to open and check the connection
+        public bool MyConnectOpen()
+        {
+            // define bool result and initiate it with false
+            bool result = false;
+            // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(MyConnection))
+                {
+                    // Open connection
+                    connection.Open();
+                    // assign true for result
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = false;
+            }
 
-        // define bool result and initiate it with false
-        // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
-
-        // Open connection
-        // assign true for result
-
-        // return result
-
-        // exception message output
-        // return false
-
+            return result;
+        }
 
         // implement MyConnect() method to close and check the connection
+        public bool MyConnectClose()
+        {
+            // define bool result and initiate it with false
+            bool result = false;
 
-        // define bool result and initiate it with false
-        // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            // in try-catch block implement using block for work new SglConnection with connection string MyConnectionString
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(MyConnection))
+                {
+                    // close connection
+                    connection.Close();
 
-        // close connection
-        // assign true for result
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                result = false;
+            }
 
-        // return result
+            return result;
+        }
 
-        // exception message output
-        // return false
     }
 }

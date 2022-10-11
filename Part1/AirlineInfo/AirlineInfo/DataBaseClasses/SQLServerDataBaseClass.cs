@@ -15,6 +15,7 @@ namespace AirlineInfo
         DataTable dtFlightStatusList;
         DataTable dtPriceList;
         DataTable dtPassengerList;
+        DataTable dtTempDepartExpectArrDate;
         public SQLServerDataBaseClass(DataSetClass dsc)
         {
             this.ds = dsc.flightDataSet;
@@ -22,6 +23,7 @@ namespace AirlineInfo
             dtFlightStatusList = dsc.flightStatusList;
             dtPriceList = dsc.priceList;
             dtPassengerList = dsc.passengersList;
+            dtTempDepartExpectArrDate = dsc.tempDepartExpectArrDates;
         }
 
         #region FlightSchedule
@@ -125,6 +127,31 @@ namespace AirlineInfo
             }
 
         }
+        public void CreateTableFlightStatusTemporaryDepartExpectArrivData()
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "CREATE TABLE TemporaryDepartExpectArrivData" +
+                "(" +
+                    "FlighNumb INT, " +
+                    "TempDepartedAt DATETIME," +
+                    "TempExpectedAt DATETIME," +
+                    "TempArrivedAt DATETIME," +
+                    "CONSTRAINT PK_TemporaryDepartExpectArrivData_FlightNumber PRIMARY KEY (FlighNumb)," +
+                    "CONSTRAINT FK_TemporaryDepartExpectArrivData_To_FlightSchedule FOREIGN KEY (FlighNumb) REFERENCES FlightSсhedule(FlightNumber)" +
+                ")";
+
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                Console.WriteLine("Таблица создана");
+
+            }
+
+        }
         public void UpdateTableStatusListInDatabase()
         {
             string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
@@ -139,6 +166,50 @@ namespace AirlineInfo
                 SqlCommandBuilder commandBiulder = new SqlCommandBuilder(adapter);
 
                 adapter.Update(dtFlightStatusList);
+
+                Console.WriteLine("Table updated");
+
+            }
+
+        }
+
+        public void UpdateTableStatusListInDatabase2()
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM FlightStatusList";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dt = dtFlightStatusList;
+
+                SqlCommandBuilder commandBiulder = new SqlCommandBuilder(adapter);
+
+                adapter.Update(dt);
+
+
+            }
+
+        }
+        public void UpdateTableTemporaryDepartExpectArrivDataInDatabase()
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "SELECT * FROM TemporaryDepartExpectArrivData";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                SqlCommandBuilder commandBiulder = new SqlCommandBuilder(adapter);
+
+                adapter.Update(dtTempDepartExpectArrDate);
 
                 Console.WriteLine("Table updated");
 
@@ -162,6 +233,23 @@ namespace AirlineInfo
             }
 
         }
+        public void ClearTableTempDepartExpectArrDateInDatabase()
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
+            string sql = "DELETE TemporaryDepartExpectArrivData";
+            // Создание подключения
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+
+                Console.WriteLine("Table TemporaryDepartExpectArrivData cleared");
+
+            }
+
+        }
         #endregion
 
         #region PriceList
@@ -170,7 +258,7 @@ namespace AirlineInfo
             string[] header = { "FlightNumb", "EuroPrice", "Currency", "UsdPrice", "Currency" };
 
             string connectionString = @"Data Source=localhost;Initial Catalog = AirlineInfo;Integrated Security=True;";
-            string sql = "CREATE TABLE PriceList " +
+            string sql = "CREATE TABLE PriceList" +
                 "(" +
                     "FlightNumb INT, " +
                     "EuroPrice INT," +

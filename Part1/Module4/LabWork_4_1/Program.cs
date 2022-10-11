@@ -18,6 +18,8 @@ namespace LabWork_4_1
             // 11) subscribe method GotNewGoods() of every Customer instance 
             // to event NewGoodsInfo of object of OnlineShop
             object1.myEvent += customer1.GotNewsGoods;
+            object1.myEvent += customer2.GotNewsGoods;
+            object1.myEvent += customer3.GotNewsGoods;
 
             // 12) invoke method NewGoods() of object of OnlineShop
             // discuss results

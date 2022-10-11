@@ -8,7 +8,7 @@ namespace AirlineInfo
 {
     interface IPrice
     {
-        public int EuroPrice { get; set; }
-        public int USDPrice { get; set; }
+        public int? EuroPrice { get; set; }
+        public int? USDPrice { get; set; }
     }
 }

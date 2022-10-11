@@ -181,7 +181,7 @@ namespace AirlineInfo
             {
                 Random random = new Random();
 
-                departure = DateTime.Now + TimeSpan.FromHours(random.Next(1, 2)) + TimeSpan.FromSeconds(random.Next(0, 60));
+                departure = DateTime.Now + TimeSpan.FromMinutes(random.Next(1, 2)) + TimeSpan.FromSeconds(random.Next(0, 60));
                 //int number = random.Next(0, 2);
                 //if (number == 0)
                 //{

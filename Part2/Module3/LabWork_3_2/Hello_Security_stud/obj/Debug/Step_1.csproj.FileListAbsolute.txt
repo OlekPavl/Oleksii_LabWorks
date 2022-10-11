@@ -1,0 +1,6 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\bin\Debug\Hello_Security_stud.exe.config
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\bin\Debug\Hello_Security_stud.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\bin\Debug\Hello_Security_stud.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\obj\Debug\Hello_Security_stud.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\obj\Debug\Hello_Security_stud.pdb
+C:\Users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Hello_Security_stud\obj\Debug\Step_1.csprojResolveAssemblyReference.cache

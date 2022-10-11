@@ -1,0 +1,5 @@
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_3\bin\Debug\Step_3.exe.config
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_3\bin\Debug\Step_3.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_3\bin\Debug\Step_3.pdb
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_3\obj\Debug\Step_3.exe
+c:\users\brain_test\documents\visual studio 2013\Projects\Hello_Security_stud\Step_3\obj\Debug\Step_3.pdb

@@ -36,30 +36,22 @@ namespace LabWork_5_1
                 await obj1.WriteData(item, "Computer");
             }
 
-            //await obj1.ReadData("Computer");
+            await obj1.ReadData("Computer");
 
 
             // 5) save data and read it with WriteZip() and ReadZip() methods
             // Note: create another file for these operations
-            //await obj1.WriteZip("Computer");
-            //await obj1.ReadZip("Computer");
-            //await obj1.ReadData("Computer_Decompressed");
+            await obj1.WriteZip("Computer");
+            await obj1.ReadZip("Computer");
+            await obj1.ReadData("Computer_Decompressed");
 
-            // 6) read info about computers asynchronously (from the 1st file)
+            //6) read info about computers asynchronously (from the 1st file)
             // While asynchronous method will be running, Main() method must print ‘*’ 
 
             // use 
             // collection of Task with info about computers as type to get returned data from method ReadAsync()
             // use property Result of collection of Task to get access to info about computers
-            List<Task> taskList = new List<Task>();
-            
 
-            taskList.Add(obj1.ReadAsync("Computer"));
-            var task = obj1.ReadAsync("Computer");
-            task.Status = TaskStatus.Running;
-
-
-            Console.WriteLine("*");
 
 
 
@@ -75,8 +67,8 @@ namespace LabWork_5_1
             // call method WriteToMemory() with info about computers as parameter
             // save returned stream to file stream
 
-        // call method WriteToFileFromMemory() with parameter of file stream
-        // open file with saved data and compare it with input info
+            // call method WriteToFileFromMemory() with parameter of file stream
+            // open file with saved data and compare it with input info
 
 
             Console.ReadKey();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj": {}
+    "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj": {
+    "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj",
+        "projectUniqueName": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj",
         "projectName": "AirlineInfo",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj",
+        "projectPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\AirlineInfo.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\obj\\",
+        "outputPath": "D:\\Oleksii\\Programming\\Oleksii_LabWorks\\Part1\\Module4\\AirlineInfo\\AirlineInfo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

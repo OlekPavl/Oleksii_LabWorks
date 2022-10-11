@@ -62,66 +62,77 @@ namespace AirlineInfo
     }
     internal class Menu
     {
-        CreateFlight flight;
+        Flight flight;
         private FlightStatusHandler callback;
         DataSetClass ds;
         SQLServerDataBaseClass sqlDataBase;
+        Action lastAction;
 
-        public Menu(CreateFlight flight)
+        public Menu(Flight flight)
         {
             this.flight = flight;
-            callback = EventMethod;
-            ds = new DataSetClass();
+            ds = new DataSetClass(); 
             sqlDataBase = new SQLServerDataBaseClass(ds);
 
+            //BackgroundCheckFlightStatus();
             InitialMenu();
+
         }
 
-
-
-        public void EventMethod(ref int numb)
+        public void EventMethod(int numb)
         {
             Console.Clear();
-            flight.EventStatusSerachByFlightNumber(numb);
+            flight.DataBaseEventStatusSerachByFlightNumber(numb);
+
+            Thread.Sleep(5000);
+            Console.Clear();
+            //lastAction?.Invoke();
+        }
+
+        public void EventMethod2(int numb)
+        {
+            Console.Clear();
+            //flight.DataBaseEventStatusSerachByFlightNumber(numb);
+            flight.DataBaseFlightStatusListUpdateDepartArr(numb);
+            Thread.Sleep(5000);
+            Console.Clear();
+            //lastAction?.Invoke();
         }
 
         public void InitialMenu()
         {
-            int num = 0;
-            // устанавливаем метод обратного вызова
-            TimerCallback tm = new TimerCallback(UpdateStatusList);
-            // создаем таймер
-            Timer timer = new Timer(tm, num, 0, 1000);
+                  
+            //flight.DataBaseCheckUpdateFlightStatusList(callback);
+            //callback = EventMethod2;
+
+            //lastAction = InitialMenu;
 
 
             while (true)
             {
                 bool status = true;
-                Console.WriteLine($"1 - {InitialMenuNumbers.add_information}");
-                Console.WriteLine($"2 - {InitialMenuNumbers.display_information}");
-                Console.WriteLine($"5 - {InitialMenuNumbers.exit}");
-                Console.WriteLine($"3 - FillDataBase");
-                Console.WriteLine($"4 - ClearDataBase");
-
+                Console.WriteLine($"1 - Generate flight data");
+                //Console.WriteLine($"2 - Transfer the information into the data base");
+                Console.WriteLine($"2 - Clear data base");
+                Console.WriteLine($"3 - Display information");
+                Console.WriteLine($"4 - Exit");
 
                 int option = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 switch (option)
                 {
                     case 1:
-                        AddMenu();
+                        //AddMenu();
+                        GenerateFlightData(10);
                         break;
                     case 2:
-                        GeneralDisplayMenu();
-                        break;
-                    case 5:
-                        status = false;
+                        ClearTablesInDataBase();
                         break;
                     case 3:
-                        FillTablesInDataBase();
+                        GeneralDisplayMenu();
                         break;
                     case 4:
-                        ClearTablesInDataBase();
+                        status = false;
                         break;
                     default:
                         Console.WriteLine("Option does not exist");
@@ -133,6 +144,17 @@ namespace AirlineInfo
                     break;
                 }
             }
+        }
+
+        #region Generate methods
+        public void GenerateFlightData(int number)
+        {
+            flight.CreateFlightSchedule(number);
+            flight.CreateFlightStatusList(callback);
+            flight.CreatePriceList();
+            flight.CreateSchedulePassengerList();
+
+            FillTablesInDataBase();
         }
         public void AddMenu()
         {
@@ -176,16 +198,21 @@ namespace AirlineInfo
 
             }
         }
+        #endregion
+
+        #region Display methods
         public void GeneralDisplayMenu()
         {
+            lastAction = GeneralDisplayMenu;
+
             while (true)
             {
                 bool status = true;
-                Console.WriteLine($"1 - {GeneralDisplayMenuNumbers.display_flight_schedule}");
-                Console.WriteLine($"2 - {GeneralDisplayMenuNumbers.display_flight_status_list}");
-                Console.WriteLine($"3 - {GeneralDisplayMenuNumbers.display_prices}");
-                Console.WriteLine($"4 - {GeneralDisplayMenuNumbers.display_passengers}");
-                Console.WriteLine($"5 - {GeneralDisplayMenuNumbers.menuUp}");
+                Console.WriteLine($"1 - Information about the flights");
+                Console.WriteLine($"2 - Information about flight statuses");
+                Console.WriteLine($"3 - Prices");
+                Console.WriteLine($"4 - Passengers");
+                Console.WriteLine($"5 - menuUp");
 
                 Console.WriteLine();
 
@@ -220,22 +247,23 @@ namespace AirlineInfo
         }
         public void ScheduleDisplayMenu()
         {
+            lastAction = ScheduleDisplayMenu;
+
             while (true)
             {
                 bool status = true;
 
-                Console.WriteLine($"1 - {ScheduleDisplayMenuNumbers.DisplayFlightsArray}");
-                Console.WriteLine($"2 - {ScheduleDisplayMenuNumbers.Search_by_flight_number}");
-                Console.WriteLine($"3 - {ScheduleDisplayMenuNumbers.Search_by_departure_city}");
-                Console.WriteLine($"4 - {ScheduleDisplayMenuNumbers.Search_by_departure_port}");
-                Console.WriteLine($"5 - {ScheduleDisplayMenuNumbers.Search_by_time_of_departure}");
-                Console.WriteLine($"6 - {ScheduleDisplayMenuNumbers.Search_by_arrival_city}");
-                Console.WriteLine($"7 - {ScheduleDisplayMenuNumbers.Search_by_arrival_port}");
-                Console.WriteLine($"8 - {ScheduleDisplayMenuNumbers.Search_by_time_of_arrival}");
-                Console.WriteLine($"9 - {ScheduleDisplayMenuNumbers.Search_the_nearest_fly_from_port}");
-                Console.WriteLine($"10 - {ScheduleDisplayMenuNumbers.Search_the_nearest_fly_to_port}");
-                Console.WriteLine($"11 - {ScheduleDisplayMenuNumbers.menuUp}");
-                Console.WriteLine($"12 - DataBaseDisplayFlights");
+                Console.WriteLine($"1 - List of flights");
+                Console.WriteLine($"2 - Search by flight number");
+                Console.WriteLine($"3 - Search by departure city");
+                Console.WriteLine($"4 - Search by departure port");
+                Console.WriteLine($"5 - Search by time of departure");
+                Console.WriteLine($"6 - Search by arrival city");
+                Console.WriteLine($"7 - Search by arrival port");
+                Console.WriteLine($"8 - Search by time of arrival");
+                Console.WriteLine($"9 - Search the nearest fly from port");
+                Console.WriteLine($"10 - Search the nearest fly to port");
+                Console.WriteLine($"11 - menuUp");
 
                 Console.WriteLine();
 
@@ -244,40 +272,37 @@ namespace AirlineInfo
                 switch (option)
                 {
                     case 1:
-                        flight.DisplayFlightSchedule();
+                        flight.DataBaseDisplayFlightSchedule();
                         break;
                     case 2:
-                        flight.SerachByFlightNumber();
+                        flight.DataBaseSearchByFlightNumber();
                         break;
                     case 3:
-                        flight.SerachByDepartureCity();
+                        flight.DataBaseSerachByDepartureCity();
                         break;
                     case 4:
-                        flight.SerachByDeparturePort();
+                        flight.DataBaseSerachByDeparturePort();
                         break;
                     case 5:
-                        flight.SerachByTimeOfDeparture();
+                        flight.DataBaseSerachByDepartureTime();
                         break;
                     case 6:
-                        flight.SerachByArrivalCity();
+                        flight.DataBaseSerachByArrivalCity();
                         break;
                     case 7:
-                        flight.SerachByArrivalPort();
+                        flight.DataBaseSerachByArrivalPort();
                         break;
                     case 8:
-                        flight.SerachByTimeOfArrival();
+                        flight.DataBaseSerachByArrivalTime();
                         break;
                     case 9:
-                        flight.SearchTheNearestOneHourFlightFromPort();
+                        flight.DataBaseSearchTheNearestOneHourFlightFromPort();
                         break;
                     case 10:
-                        flight.SearchTheNearestOneHourFlightToPort();
+                        flight.DataBaseSearchTheNearestOneHourFlightToPort();
                         break;
                     case 11:
                         status = false;
-                        break;
-                    case 12:
-                        flight.DataBaseDisplayFlightSchedule();
                         break;
                     default:
                         Console.WriteLine("Option does not exist");
@@ -304,14 +329,17 @@ namespace AirlineInfo
         }
         public void StatusListDisplayMenu()
         {
+            lastAction = StatusListDisplayMenu;
+
+
             while (true)
             {
                 bool status = true;
 
-                Console.WriteLine($"1 - {StatusListDisplayMenuNumbers.DisplayStatusListArray}");
-                Console.WriteLine($"2 - {StatusListDisplayMenuNumbers.Search_by_flight_number}");
-                Console.WriteLine($"3 - {StatusListDisplayMenuNumbers.menuUp}");
-                Console.WriteLine($"4 - DataBaseStatusListDisplay");
+                Console.WriteLine($"1 - Statuses of the flights");
+                Console.WriteLine($"2 - Search by flight number");
+                Console.WriteLine($"3 - Temporary depart/expect/arr dates");
+                Console.WriteLine($"4 - menuUp");
 
                 Console.WriteLine();
 
@@ -320,16 +348,16 @@ namespace AirlineInfo
                 switch (option)
                 {
                     case 1:
-                        flight.DisplayFlightStatusList();
+                        flight.DataBaseDisplayFlightStatusList();
                         break;
                     case 2:
-                        flight.StatusSerachByFlightNumber();
+                        flight.DataBaseSearchByFlightNumberFlightStatus();
                         break;
                     case 3:
-                        status = false;
+                        flight.DataBaseDisplayTempDepartExpectArr();
                         break;
                     case 4:
-                        flight.DataBaseDisplayFlightStatusList();
+                        status = false;
                         break;
                     default:
                         Console.WriteLine("Option does not exist");
@@ -356,13 +384,15 @@ namespace AirlineInfo
         }
         public void PriceListDisplayMenu()
         {
+            lastAction = PriceListDisplayMenu;
+
             while (true)
             {
                 bool status = true;
 
-                Console.WriteLine($"1 - {PriceListDisplayMenuNumbers.Display_PriceList_Array}");
-                Console.WriteLine($"2 - {PriceListDisplayMenuNumbers.Search_by_flight_number}");
-                Console.WriteLine($"3 - {PriceListDisplayMenuNumbers.menuUp}");
+                Console.WriteLine($"1 - Prices");
+                Console.WriteLine($"2 - Search by flight number");
+                Console.WriteLine($"3 - menuUp");
 
                 Console.WriteLine();
 
@@ -371,10 +401,10 @@ namespace AirlineInfo
                 switch (option)
                 {
                     case 1:
-                        flight.DisplayPriceList();
+                        flight.DataBasePriceList();
                         break;
                     case 2:
-                        flight.PriceSearchByFlightNumber();
+                        flight.DataBaseSearchByFlightNumberPriceList();
                         break;
                     case 3:
                         status = false;
@@ -404,14 +434,18 @@ namespace AirlineInfo
         }
         public void SchedulePassengersDisplayMenu()
         {
+            lastAction = SchedulePassengersDisplayMenu;
+
             while (true)
             {
                 bool status = true;
 
-                Console.WriteLine($"1 - {ScheduleDisplayPassengerList.Display_Schedule_Passenger_List}");
-                Console.WriteLine($"2 - {ScheduleDisplayPassengerList.Search_by_flight_number}");
-                Console.WriteLine($"3 - {ScheduleDisplayPassengerList.menuUp}");
-                Console.WriteLine($"4 - DataBaseDisplayPassengerList)");
+                Console.WriteLine($"1 - List of passengers");
+                Console.WriteLine($"2 - Search by flight number");
+                Console.WriteLine($"3 - Search by second name");
+                Console.WriteLine($"4 - Search by nationality");
+                Console.WriteLine($"5 - Search by passport");
+                Console.WriteLine($"6 - menuUp");
 
                 Console.WriteLine();
 
@@ -420,15 +454,22 @@ namespace AirlineInfo
                 switch (option)
                 {
                     case 1:
-                        flight.DisplaySchedulePassengerList();
+                        flight.DataBaseDisplayPassengerList();
                         break;
                     case 2:
+                        flight.DataBaseSearchByFlightNumberPassengerList();
                         break;
                     case 3:
-                        status = false;
+                        flight.DataBaseSearchBySecondNamePassengerList();
                         break;
                     case 4:
-                        flight.DataBaseDisplayPassengerList();
+                        flight.DataBaseSearchByNationalityPassengerList();
+                        break;
+                    case 5:
+                        flight.DataBaseSearchByPassportNumberPassengerList();
+                        break;
+                    case 6:
+                        status = false;
                         break;
                     default:
                         Console.WriteLine("Option does not exist");
@@ -453,29 +494,35 @@ namespace AirlineInfo
                 }
             }
         }
-        public void UpdateStatusList(object obj)
-        {
-            flight.CheckUpdateFlightStatusList();
-        }
+        #endregion
 
+        #region Methods for update / clear data base
         public void FillTablesInDataBase()
         {
             for (int i = 0; i < 1; i++)
             {
                 ds.FillScheduleTable(flight.flightSchedule);
                 ds.FillFlightStatusListTable(flight.flightStatusList);
+                ds.FillTempDepartExpectArrTable(flight.flightStatusList);
                 ds.FillFlightPriceListTable(flight.priceList);
                 ds.FillPassengerListTable(flight.schedulePassengerList);
                 //ds.DisplayPassengerListTable();
+                //ds.DisplayTempDepartExpectArrTable();
+
 
                 //sqlDataBase.CreateTableFlightScheduleInDatabase();
                 //sqlDataBase.CreateTableFlightStatusListInDatabase();
                 //sqlDataBase.CreateTablePriceListInDatabase();
                 //sqlDataBase.CreateTablePassengerListInDatabase();
+                //sqlDataBase.CreateTableFlightStatusTemporaryDepartExpectArrivData();
                 sqlDataBase.UpdateTableFlightScheduleInDatabase();
                 sqlDataBase.UpdateTableStatusListInDatabase();
                 sqlDataBase.UpdateTablePriceListInDatabase();
                 sqlDataBase.UpdateTablePassengerListInDatabase();
+                sqlDataBase.UpdateTableTemporaryDepartExpectArrivDataInDatabase();
+
+                Thread.Sleep(2000);
+                Console.Clear();
 
             }
 
@@ -485,9 +532,30 @@ namespace AirlineInfo
         {
             sqlDataBase.ClearTableFlightStatusListInDatabase();
             sqlDataBase.ClearTablePriceListInDatabase();
-            sqlDataBase.ClearTableFlightScheduleInDatabase();
             sqlDataBase.ClearTablePassengerListInDatabase();
-        }
+            sqlDataBase.ClearTableTempDepartExpectArrDateInDatabase();
+            sqlDataBase.ClearTableFlightScheduleInDatabase();
 
+            Thread.Sleep(2000);
+
+            Console.Clear();
+        }
+        #endregion
+
+        #region Methods for constant background check glight statuses
+        public void BackgroundCheckFlightStatus()
+        {
+            
+            int num = 0;
+            // устанавливаем метод обратного вызова
+            TimerCallback tm = new TimerCallback(UpdateStatusList);
+            // создаем таймер
+            Timer timer = new Timer(tm, num, 0, 1000);
+        }
+        public void UpdateStatusList(object obj)
+        {
+            flight.DataBaseCheckUpdateFlightStatusList(callback);
+        }
+        #endregion
     }
 }

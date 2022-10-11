@@ -15,6 +15,7 @@ namespace AirlineInfo
     class Price : IPrice
     {
         public string[] arrayPrice = new string[5];
+
         public int? FlightNumber { get; set; }
         FlightInformation flight;
         public Price(FlightInformation flight)
@@ -24,8 +25,12 @@ namespace AirlineInfo
             arrayPrice[0] = FlightNumber.ToString();
             PriceAutomaticalInitializer();
         }
-        public int EuroPrice { get; set; }
-        public int USDPrice { get; set; } 
+        public Price()
+        {
+            EmptyPriceAutomaticalInitializer();
+        }
+        public int? EuroPrice { get; set; }
+        public int? USDPrice { get; set; } 
 
         public void PriceAutomaticalInitializer()
         {
@@ -38,6 +43,21 @@ namespace AirlineInfo
             USDPrice = (int)(EuroPrice * 1.2);
             arrayPrice[3] = USDPrice.ToString();
             arrayPrice[4] = PriceCurrency.USD.ToString();
+
+        }
+        public void EmptyPriceAutomaticalInitializer()
+        {
+            FlightNumber = null;
+            arrayPrice[0] = null;
+
+            EuroPrice = null;
+            arrayPrice[1] = null;
+
+            arrayPrice[2] = null;
+
+            USDPrice = null;
+            arrayPrice[3] = null;
+            arrayPrice[4] = null;
 
         }
     }
